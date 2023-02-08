@@ -17,13 +17,15 @@ class InventoryList extends Component {
     fetch("api/inventories")
       .then((response) => response.json())
       .then((data) => this.setState({ inventories: data, isLoading: false }));
+
+    console.log("inventories", this.state.inventories);
   }
 
   removeInv = async (id) => {
     await fetch(`/api/inventory/${id}`, {
       method: "DELETE",
       headers: {
-        Accept: "application/jason",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
     });
@@ -38,9 +40,9 @@ class InventoryList extends Component {
   render() {
     const { inventories, isLoading } = this.state;
 
-    if (isLoading) {
-      return <p>Loading...</p>;
-    }
+    // if (isLoading) {
+    //   return <p>Loading...</p>;
+    // }
 
     const InventoryList = inventories.map((inventory) => {
       return (

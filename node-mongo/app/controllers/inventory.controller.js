@@ -49,6 +49,7 @@ exports.inventories = (req, res) => {
     .select("-__v")
     .then((inventoryInfos) => {
       res.status(200).json(inventoryInfos);
+      console.log("inventoryInfos", inventoryInfos);
     })
     .catch((error) => {
       // log on console
