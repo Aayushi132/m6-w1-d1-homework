@@ -114,7 +114,13 @@ class InventoryEdit extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Button color="primary" type="submit" className="mt-3">
+              <Button
+                color="primary"
+                type="submit"
+                className="mt-3"
+                tag={Link}
+                to="/inventories"
+              >
                 Save
               </Button>{" "}
               <Button
